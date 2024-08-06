@@ -1,0 +1,19 @@
+{
+   "architectures" : [
+      "SCMP_ARCH_X86",
+      "SCMP_ARCH_X32"
+   ],
+   "defaultAction" : "SCMP_ACT_ALLOW",
+   "listenerPath": "/run/seccomp-agent.socket",
+   "listenerMetadata": "SPIRE=1",
+   "syscalls" : [
+      {
+         "action" : "SCMP_ACT_NOTIFY",
+         "names" : [
+            "openat",
+            "open",
+            "stat"
+         ]
+      }
+   ]
+}

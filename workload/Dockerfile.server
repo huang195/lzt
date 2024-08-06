@@ -1,0 +1,22 @@
+# Use an official Ubuntu base image
+FROM ubuntu:latest
+
+# Install necessary packages
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the server.c source file to the container
+COPY server.c .
+
+# Compile the server program
+RUN gcc server.c -o server
+
+# Expose the port the server listens on
+EXPOSE 8080
+
+# Set the entry point to run the server program
+ENTRYPOINT ["./server"]
