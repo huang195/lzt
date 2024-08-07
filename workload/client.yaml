@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client
+  namespace: default
+spec:
+  securityContext:
+    seccompProfile:
+      type: Localhost
+      localhostProfile: profiles/notify.json
+  restartPolicy: Never
+  containers:
+  - name: client
+    image: haih/client

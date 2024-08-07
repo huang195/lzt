@@ -1,4 +1,19 @@
 apiVersion: v1
+kind: Pod
+metadata:
+  name: server
+  namespace: default
+spec:
+  securityContext:
+    seccompProfile:
+      type: Localhost
+      localhostProfile: profiles/notify.json
+  restartPolicy: Never
+  containers:
+  - name: server
+    image: haih/server
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: server
