@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: server
   namespace: default
+  labels:
+    run: server
 spec:
   securityContext:
     seccompProfile:

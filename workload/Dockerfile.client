@@ -11,10 +11,10 @@ WORKDIR /app
 
 # Copy the client.c source file to the container
 COPY client.c .
+COPY client.sh .
 
 # Compile the client program
 RUN gcc client.c -o client
 
 # Set the entry point to run the client program
-ENTRYPOINT ["./client"]
-CMD ["server.default.svc.cluster.local"]
+ENTRYPOINT ["./client.sh"]
