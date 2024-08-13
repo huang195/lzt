@@ -1,5 +1,5 @@
 #!/bin/sh
 
 kubectl apply -f server.yaml
-sleep 10
+sleep 3
 kubectl apply -f client.yaml

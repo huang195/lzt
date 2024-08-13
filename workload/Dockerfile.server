@@ -11,6 +11,7 @@ WORKDIR /app
 
 # Copy the server.c source file to the container
 COPY server.c .
+COPY server.sh .
 
 # Compile the server program
 RUN gcc server.c -o server
@@ -19,4 +20,4 @@ RUN gcc server.c -o server
 EXPOSE 8080
 
 # Set the entry point to run the server program
-ENTRYPOINT ["./server"]
+ENTRYPOINT ["./server.sh"]

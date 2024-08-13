@@ -57,6 +57,12 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
+    printf("addrlen: %d, sin_family: %d, sin_port %d, sin_addr: %0x\n", 
+            addrlen, 
+            address.sin_family,
+            address.sin_port,
+            address.sin_addr.s_addr);
+
     // Read data from the socket and echo it back
     while (1) {
         int valread = read(new_socket, buffer, BUFFER_SIZE);

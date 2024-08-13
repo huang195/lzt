@@ -10,7 +10,8 @@
       {
          "action" : "SCMP_ACT_NOTIFY",
          "names" : [
-            "connect"
+            "connect",
+            "accept"
          ]
       }
    ]
